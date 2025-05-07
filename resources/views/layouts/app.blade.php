@@ -7,27 +7,59 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>@yield("title")</title>
 </head>
-<body class="m-0 p-0">
+<body class="m-0 p-0 overflow-x-hidden">
 
-    {{-- Navbar --}}
-    @if(!request()->routeIs('login') && !request()->routeIs('register') && !request()->routeIs(patterns:'profile'))
-        <x-navbar />
+    {{-- Sidebar selalu ada --}}
+    @if(request()->routeIs('dashboard') || request()->routeIs('pengelolaan'))
+        <x-sidebar />
     @endif
 
-    {{-- Jika halaman login atau register, tampilkan langsung konten --}}
-    @if(request()->routeIs('login') || request()->routeIs('register'))
-        @yield('content')
-    @else
-        <div class="flex min-h-screen">
-            {{-- Sidebar --}}
-            @if(request()->routeIs('dashboard') || request()->routeIs('pengelolaan'))
-                <x-sidebar />
-            @endif
+    {{-- Wrapper konten utama --}}
+    <div id="mainContent" class="transition-all duration-300 {{ request()->routeIs('login') || request()->routeIs('register') ? 'pl-0' : 'pl-12' }}">
 
-            <main class="flex-1 p-6">
+        {{-- Navbar --}}
+        @if(!request()->routeIs('login') && !request()->routeIs('register') && !request()->routeIs(patterns:'profile'))
+            <x-navbar />
+        @endif
+
+        {{-- Konten --}}
+        @if(request()->routeIs('login') || request()->routeIs('register'))
+            @yield('content')
+        @else
+            <main class="p-6">
                 @yield('content')
             </main>
-        </div>
+        @endif
+
+    </div>
+
+    {{-- Script toggle sidebar --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarContent = document.getElementById('sidebarContent');
+            const toggleBtn = document.getElementById('toggleSidebarBtn');
+            const mainContent = document.getElementById('mainContent');
+
+            let isExpanded = false;
+
+            toggleBtn?.addEventListener('click', () => {
+                isExpanded = !isExpanded;
+
+                sidebar.classList.toggle('w-12', !isExpanded);
+                sidebar.classList.toggle('w-64', isExpanded);
+
+                sidebarContent.classList.toggle('opacity-0', !isExpanded);
+                sidebarContent.classList.toggle('opacity-100', isExpanded);
+
+                mainContent.classList.toggle('pl-12', !isExpanded);
+                mainContent.classList.toggle('pl-64', isExpanded);
+            });
+        });
+    </script>
+    
+    @if(!request()->routeIs('login'))
+        <x-footer />
     @endif
 
 </body>

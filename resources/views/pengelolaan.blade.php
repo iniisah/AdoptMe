@@ -10,7 +10,7 @@
             <img src="{{ asset($item['foto']) }}" alt="{{ $item['nama'] }}" class="w-full h-48 object-cover">
             <div class="p-4 relative">
                 {{-- Ikon sunting --}}
-                <img src="{{ asset('images/sunting biru.png') }}" alt="Edit" class="w-7 h-7 absolute top-8 right-4 cursor-pointer">
+                <img src="{{ asset('images/sunting_biru.png') }}" alt="Edit" class="w-9 h-9 absolute top-8 right-4 cursor-pointer">
     
                 <h2 class="text-lg font-semibold">{{ $item['nama'] }}</h2>
                 <p class="text-sm text-gray-600">{{ $item['jenis'] }}</p>
@@ -22,7 +22,7 @@
 
 {{-- Tambah Icon (tanpa link) --}}
         <div class="flex items-center justify-center p-6">
-        <img src="{{ asset('images/tambah hijau.png') }}" alt="Tambah" class="w-16 h-16">
+        <img src="{{ asset('images/tambah_hijau.png') }}" alt="Tambah" class="w-20 h-20">
         </div>
 
     </div>

@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <nav class="bg-blue-900 shadow px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-  <div class="text-xl font-bold text-white">AdoptMe</div>
+  <div class="text-2xl font-bold text-white">AdoptMe</div>
 
   <ul class="flex space-x-6 text-gray-700 items-center">
     <li>
@@ -10,7 +10,7 @@
     </li>
     <li>
         <a href="/profile" class="hover:opacity-80 transition">
-            <img src="{{ asset('images/profil.png') }}" alt="Profil" class="w-10 h-10">
+            <img src="{{ asset('images/profil.png') }}" alt="Profil" class="w-12 h-12">
         </a>
     </li>
   </ul>

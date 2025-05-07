@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="relative w-full min-h-screen m-0 p-0 overflow-hidden">
-    <img src="images/log_back2.png" alt="Background Login"
+    <img src="images/log_back.png" alt="Background Login"
         class="absolute w-full h-full object-cover" />
 
     <div class="absolute inset-0 flex items-center justify-center">
