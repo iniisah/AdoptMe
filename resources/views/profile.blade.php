@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'My Profile')
 
 @section('content')
 <div class="max-w-2xl mx-auto py-12 px-4 relative">

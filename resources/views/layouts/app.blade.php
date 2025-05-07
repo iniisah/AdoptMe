@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>@yield("title")</title>
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+
 </head>
 <body class="m-0 p-0 overflow-x-hidden">
 
