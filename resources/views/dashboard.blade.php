@@ -1,11 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Dashboard')
-
 @section('content')
 <div class="max-w-7xl mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold text-gray-800 mb-6">Selamat datang, {{ $username }}!</h1>
-
-    <!-- Statistik Ringkas -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-6 rounded-lg shadow">
             <p class="text-sm text-white">Total Hewan</p>
@@ -24,8 +21,6 @@
             <p class="text-2xl font-bold text-white">2</p>
         </div>
     </div>
-
-
 
     <div class="bg-white rounded-lg shadow p-6 mb-8">
         <h2 class="text-xl font-semibold text-gray-700 mb-4">Permintaan Adopsi Terbaru</h2>
@@ -60,7 +55,6 @@
         </div>
     </div>
 
-    <!-- Hewan Terbaru -->
     <div class="bg-blue-900 rounded-lg shadow p-6">
         <h2 class="text-xl font-semibold text-white mb-4">Hewan Terbaru</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

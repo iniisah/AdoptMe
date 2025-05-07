@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Adopt Me')
-
 @section('content')
 <div class="relative w-full min-h-screen m-0 p-0 overflow-hidden">
     <img src="images/log_back.png" alt="Background Login"

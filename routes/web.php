@@ -12,8 +12,7 @@ Route::get('/hewan/create', [PageController::class, 'create'])->name('hewan.crea
 Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 Route::put('/profile/update', [PageController::class, 'update'])->name('profile.update');
 
-// Custom logout menggunakan session manual
 Route::post('/logout', function () {
-    Session::flush(); // Hapus semua data session
+    Session::flush(); 
     return redirect()->route('login');
 })->name('logout');

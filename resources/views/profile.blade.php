@@ -1,29 +1,19 @@
 @extends('layouts.app')
 @section('title', 'My Profile')
-
 @section('content')
 <div class="max-w-2xl mx-auto py-12 px-4 relative">
-
-    {{-- Tombol kembali --}}
     <a href="{{ url()->previous() }}" class="fixed top-4 left-4 z-50">
         <img src="{{ asset('images/back.png') }}" alt="Kembali" class="w-9 h-9 hover:opacity-80 transition">
     </a>
 
-
-    {{-- Judul --}}
     <h1 class="text-4xl font-bold text-center text-gray-800 mb-10">Profil Pengguna</h1>
 
-    {{-- Kartu Profil --}}
     <div class="bg-white shadow-xl rounded-2xl px-8 py-10 space-y-8">
-        {{-- Avatar --}}
         <div class="flex justify-center">
             <img src="{{ asset('images/profil.png') }}" 
                 alt="Avatar" 
                 class="w-24 h-24 rounded-full shadow-md object-cover">
         </div>
-
-
-        {{-- Informasi Pengguna --}}
         <div class="space-y-4 text-gray-700 text-sm sm:text-base">
             @foreach([
                 'Nama Lengkap' => $name,
@@ -38,8 +28,6 @@
                 </div>
             @endforeach
         </div>
-
-        {{-- Tombol Aksi --}}
         <div class="flex justify-center gap-4">
             <button onclick="openEditModal()" class="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">Edit Profil</button>
             <button onclick="openLogoutModal()" class="px-5 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">Logout</button>
@@ -47,7 +35,6 @@
     </div>
 </div>
 
-{{-- Modal Edit Profil --}}
 <div id="editModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
     <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md animate-fadeIn">
         <h2 class="text-xl font-semibold mb-4 text-center">Edit Profil</h2>
@@ -73,8 +60,6 @@
         </form>
     </div>
 </div>
-
-{{-- Modal Logout --}}
 <div id="logoutModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
     <div class="bg-white rounded-2xl shadow-xl p-6 w-96 text-center animate-fadeIn">
         <h2 class="text-xl font-semibold mb-4">Apakah anda yakin ingin keluar?</h2>
@@ -91,7 +76,7 @@
 </div>
 @endsection
 
-{{-- Animasi fadeIn --}}
+
 <style>
 .animate-fadeIn {
     animation: fadeIn 0.2s ease-out;
@@ -108,7 +93,6 @@
 }
 </style>
 
-{{-- Script Modal --}}
 <script>
 function openEditModal() {
     const modal = document.getElementById('editModal');

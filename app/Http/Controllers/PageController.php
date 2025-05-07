@@ -17,7 +17,6 @@ class PageController extends Controller
         $username = $request->input('username');
         $password = $request->input('password');
 
-        // Data admin statis (tetap ada)
         $admins = [
             [
                 'username' => 'anarana',
@@ -37,19 +36,16 @@ class PageController extends Controller
         }
 
         if ($validAdmin) {
-            // Jika cocok dengan data admin, simpan datanya
             Session::put('username', $validAdmin['username']);
             Session::put('name', $validAdmin['nama']);
             Session::put('email', $validAdmin['email']);
             Session::put('phone', $validAdmin['no_hp']);
         } else {
-            // Jika bukan admin, tetap login dengan data seadanya
             Session::put('username', $username);
             Session::put('name', 'Pengguna Biasa');
             Session::put('email', $username . '@example.com');
             Session::put('phone', '-');
-        }
-        
+        }    
         return redirect()->route('dashboard');
     }
 
@@ -57,8 +53,6 @@ class PageController extends Controller
     public function dashboard(Request $request)
     {
         $username = Session::get('username');
-
-        // Ambil periode tanggal dari request GET
         $startDate = $request->query('start_date');
         $endDate = $request->query('end_date');
 
